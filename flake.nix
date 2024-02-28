@@ -6,10 +6,19 @@
   };
 
   outputs = { self, nixpkgs }: {
-
-    packages.x86_64-linux.hello = nixpkgs.legacyPackages.x86_64-linux.hello;
-
-    packages.x86_64-linux.default = self.packages.x86_64-linux.hello;
-
+  let
+    system = "x86_64-linux";
+    pkgs = import nixpkgs {
+      inherit system;
+      config.allowUnfree = true;
+    };
+    lib = nixpkgs.lib;
+  in {
+    nixosConfigurations = {
+      asus-laptop = lib.nixosSystem {
+        inherit system;
+        modules = [ ./configuration.nix ];
+      };
+    };
   };
 }
