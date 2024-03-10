@@ -17,7 +17,7 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = user; # Define your hostname.
+  networking.hostName = "PC-Erwan"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
@@ -95,6 +95,7 @@ in
     isNormalUser = true;
     description = "Erwan";
     extraGroups = [ "audio"  "networkmanager" "wheel" ];
+    initialPassword = "password";
     packages = with pkgs; [
       xfce.thunar	
       alacritty
@@ -102,6 +103,11 @@ in
       vlc
       libreoffice
       discord
+      zoom-us
+
+      # VPN
+      openvpn
+      openresolv
 
       # Python Programming
       python311Packages.pip
@@ -120,6 +126,11 @@ in
       rustc
       cargo
       rust-analyzer
+
+      # Java Programming
+      eclipses.eclipse-java
+      jetbrains.idea-ultimate
+      javacc
     ];
   };
 
