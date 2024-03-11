@@ -17,7 +17,7 @@
     nixosConfigurations = {
       asus-laptop = lib.nixosSystem {
         inherit system;
-        modules = [ ./hosts/PC-Asus-Erwan/configuration.nix ];
+        modules = [ ./hosts/asus-laptop/configuration.nix ];
       };
     };
   };

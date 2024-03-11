@@ -104,6 +104,7 @@ in
       libreoffice
       discord
       zoom-us
+      cinnamon.pix
 
       # VPN
       openvpn
