@@ -5,7 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
   };
 
-  outputs = { self, nixpkgs }: {
+  outputs = { self, nixpkgs }:
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs {
@@ -17,7 +17,7 @@
     nixosConfigurations = {
       asus-laptop = lib.nixosSystem {
         inherit system;
-        modules = [ ./configuration.nix ];
+        modules = [ ./hosts/PC-Asus-Erwan/configuration.nix ];
       };
     };
   };
