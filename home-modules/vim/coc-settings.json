@@ -1,0 +1,44 @@
+{
+    "suggest.noselect": true,
+    "languageserver": {
+        "c": {
+            "command": "clangd",
+            "settings": {
+                "UseTab": true,
+                "IndentWidth": 2,
+                "TabWidth": 2
+            },
+            "rootPatterns": [
+                "compile_flags.txt",
+                "compile_commands.json"
+            ],
+            "filetypes": [
+                "c",
+                "cc",
+                "cpp",
+                "c++",
+                "objc",
+                "objcpp"
+            ]
+        },
+        "nix": {
+            "command": "nil",
+            "filetypes": [
+                "nix"
+            ],
+            "rootPatterns": [
+                "flake.nix"
+            ],
+            "settings": {
+                "nil": {
+                    "formatting": {
+                        "command": [
+                            "nixpkgs-fmt"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "coc.preferences.formatOnSave": true
+}

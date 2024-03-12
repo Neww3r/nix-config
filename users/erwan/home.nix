@@ -3,6 +3,7 @@ let
   importModules = modules: (map (path: ../../home-modules/${path}) modules);
 in
 {
+  imports = importModules [ "vim" ];
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "erwan";
@@ -45,13 +46,6 @@ in
     alacritty
     xterm
 
-    #Fonts
-    powerline-fonts
-
-    # NixOS autocompletion
-    nil
-    nixpkgs-fmt
-
     # VPN
     openvpn
     openresolv
@@ -67,13 +61,11 @@ in
     gdb
     gnumake
     valgrind
-    clang-tools_16
     criterion
 
     # Rust Programming
     rustc
     cargo
-    rust-analyzer
 
     # Java Programming
     eclipses.eclipse-java
