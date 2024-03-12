@@ -22,14 +22,31 @@ in
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
-    xfce.thunar # file explorator
+
+    # Files
+    xfce.thunar
     cinnamon.pix
     feh
-    alacritty
     vlc
     libreoffice
+
+    # Tools
+    wget
+    xsel
+    tree
+    unzip
+    nodejs
+
+    # Communication
     discord
     zoom-us
+
+    # Terminal
+    alacritty
+    xterm
+
+    #Fonts
+    powerline-fonts
 
     # NixOS autocompletion
     nil
@@ -40,6 +57,7 @@ in
     openresolv
 
     # Python Programming
+    python311
     python311Packages.pip
     python311Packages.virtualenv
     python311Packages.autopep8
