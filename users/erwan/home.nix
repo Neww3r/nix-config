@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
-
+let
+  importModules = modules: (map (path: ../../home-modules/${path}) modules);
+in
 {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
