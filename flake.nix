@@ -17,7 +17,8 @@
     nixosConfigurations = {
       asus-laptop = lib.nixosSystem {
         inherit system;
-        modules = [ ./hosts/asus-laptop/configuration.nix ];
+        modules = [ 
+            ./hosts/asus-laptop/configuration.nix ];
       };
     };
   };

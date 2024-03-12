@@ -106,6 +106,10 @@ in
       zoom-us
       cinnamon.pix
 
+      # NixOS autocompletion
+      nil
+      nixpkgs-fmt
+
       # VPN
       openvpn
       openresolv
