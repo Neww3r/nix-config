@@ -18,4 +18,46 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  home.packages = with pkgs; [
+    xfce.thunar # file explorator
+    cinnamon.pix
+    feh
+    alacritty
+    vlc
+    libreoffice
+    discord
+    zoom-us
+
+    # NixOS autocompletion
+    nil
+    nixpkgs-fmt
+
+    # VPN
+    openvpn
+    openresolv
+
+    # Python Programming
+    python311Packages.pip
+    python311Packages.virtualenv
+    python311Packages.autopep8
+
+    # C Programming
+    gcc
+    gdb
+    gnumake
+    valgrind
+    clang-tools_16
+    criterion
+
+    # Rust Programming
+    rustc
+    cargo
+    rust-analyzer
+
+    # Java Programming
+    eclipses.eclipse-java
+    jetbrains.idea-ultimate
+    javacc
+  ];
 }

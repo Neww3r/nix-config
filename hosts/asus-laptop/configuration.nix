@@ -9,10 +9,11 @@ let
 in
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
-  
+
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -20,7 +21,7 @@ in
   networking.hostName = "asus-laptop"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
 
   # Set your time zone.
   time.timeZone = "Asia/Seoul";
@@ -40,7 +41,7 @@ in
   services = {
     xserver = {
       enable = true;
-      
+
       desktopManager = {
         xterm.enable = false;
       };
@@ -59,7 +60,7 @@ in
       };
     };
   };
-  
+
 
   # Configure keymap in X11
   services.xserver.xkb.layout = "us";
@@ -77,7 +78,7 @@ in
     pulseaudio = {
       enable = true;
     };
-    
+
     bluetooth = {
       enable = true;
       powerOnBoot = true;
@@ -86,7 +87,7 @@ in
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
-  
+
   services.gvfs.enable = true; # Mount, trash, and other functionalities
   services.tumbler.enable = true; # Thumbnail support for images
 
@@ -94,61 +95,20 @@ in
   users.users.${user} = {
     isNormalUser = true;
     description = "Erwan";
-    extraGroups = [ "audio"  "networkmanager" "wheel" ];
+    extraGroups = [ "audio" "networkmanager" "wheel" ];
     initialPassword = "password";
-    packages = with pkgs; [
-      xfce.thunar	
-      alacritty
-      feh
-      vlc
-      libreoffice
-      discord
-      zoom-us
-      cinnamon.pix
-
-      # NixOS autocompletion
-      nil
-      nixpkgs-fmt
-
-      # VPN
-      openvpn
-      openresolv
-
-      # Python Programming
-      python311Packages.pip
-      python311Packages.virtualenv
-      python311Packages.autopep8     
-
-      # C Programming
-      gcc
-      gdb
-      gnumake
-      valgrind
-      clang-tools_16
-      criterion
-
-      # Rust Programming
-      rustc
-      cargo
-      rust-analyzer
-
-      # Java Programming
-      eclipses.eclipse-java
-      jetbrains.idea-ultimate
-      javacc
-    ];
   };
 
   fonts.packages = with pkgs; [
     powerline-fonts
     terminus_font
   ];
-  
+
   programs.thunar.enable = true;
-  
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  
+
   environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /run/current-system/sw
 
   # List packages installed in system profile. To search, run:
