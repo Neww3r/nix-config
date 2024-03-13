@@ -64,6 +64,9 @@ in
     git
   ];
 
+  # File explorer
+  programs.thunar.enable = true;
+
   system.stateVersion = "23.11"; # Did you read the comment?
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }
