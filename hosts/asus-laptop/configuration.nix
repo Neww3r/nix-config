@@ -8,6 +8,7 @@ in
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../../sys-modules/i3
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -21,45 +22,12 @@ in
   # Set your time zone.
   time.timeZone = "Asia/Seoul";
 
-
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
   console = {
     font = "Lat2-Terminus16";
     keyMap = "us";
   };
-
-  # Enable the X11 windowing system.
-  services = {
-    xserver = {
-      enable = true;
-
-      desktopManager = {
-        xterm.enable = false;
-      };
-
-      displayManager = {
-        defaultSession = "none+i3";
-      };
-
-      windowManager.i3 = {
-        enable = true;
-        extraPackages = with pkgs; [
-          dmenu
-          i3status
-          i3lock
-        ];
-      };
-    };
-  };
-
-
-  # Configure keymap in X11
-  services.xserver.xkb.layout = "us";
-  services.xserver.xkb.options = "caps:escape";
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
 
   # Enable sound.
   sound = {
@@ -76,12 +44,6 @@ in
       powerOnBoot = true;
     };
   };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
-
-  services.gvfs.enable = true; # Mount, trash, and other functionalities
-  services.tumbler.enable = true; # Thumbnail support for images
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${user} = {
@@ -115,4 +77,3 @@ in
   system.stateVersion = "23.11"; # Did you read the comment?
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }
-
