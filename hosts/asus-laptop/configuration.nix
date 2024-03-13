@@ -53,24 +53,14 @@ in
     initialPassword = "password";
   };
 
-  fonts.packages = with pkgs; [
-    powerline-fonts
-    terminus_font
-  ];
-
-  programs.thunar.enable = true;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /run/current-system/sw
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim
     firefox
-    i3
     git
   ];
 
