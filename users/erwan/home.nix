@@ -7,6 +7,7 @@ in
     "vim"
     "i3"
     "alacritty"
+    "bash"
   ];
 
   # Home Manager needs a bit of information about you and the
