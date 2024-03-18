@@ -9,8 +9,7 @@
       terminal = "alacritty";
       startup = [
         {
-          command = "${pkgs.feh}/bin/feh --bg-scale
-          ~/Pictures/wallpapers/wallpaper.png";
+          command = "${pkgs.feh}/bin/feh --bg-scale ~/Pictures/wallpapers/wallpaper.png";
           always = true;
           notification = false;
         }
