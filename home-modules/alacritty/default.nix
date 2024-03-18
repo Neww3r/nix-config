@@ -8,7 +8,7 @@
       ];
 
       window = {
-        opactity = 0.85;
+        opacity = 0.85;
       };
     };
   };
