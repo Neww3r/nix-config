@@ -188,5 +188,8 @@ bar {
         status_command i3status
         position top
 }
+# Window compositor
+exec_always --no-startup-id picom -f
 
+# Wallpaper
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpapers/wallpaper.png
