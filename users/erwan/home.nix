@@ -3,7 +3,11 @@ let
   importModules = modules: (map (path: ../../home-modules/${path}) modules);
 in
 {
-  imports = importModules [ "vim" ];
+  imports = importModules [
+    "vim"
+    "i3"
+  ];
+
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "erwan";
