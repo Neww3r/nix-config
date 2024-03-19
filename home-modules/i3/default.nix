@@ -26,5 +26,17 @@
         }
       ];
     };
+    extraConfig =
+      let
+        # border | background | text | indicator | child_border
+        focused = "#00000000 #212155d9 #FFFFFF #00000000 #00000000";
+        unfocused = "#00000000 #00000000 #FFFFFF #00000000 #00000000";
+        urgent = "#FF0000   #FF0000   #FF0000 #FF0000   #FF0000";
+      in
+      ''
+        client.focused            ${focused}
+        client.unfocused          ${unfocused} 
+        client.urgent             ${urgent} 
+      '';
   };
 }
