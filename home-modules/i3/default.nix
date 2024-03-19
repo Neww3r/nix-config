@@ -23,6 +23,9 @@
         {
           statusCommand = "${pkgs.i3status}/bin/i3status";
           position = "top";
+          colors = {
+            background = "#282828d9";
+          };
         }
       ];
       gaps = {
