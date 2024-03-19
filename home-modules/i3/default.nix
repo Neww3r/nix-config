@@ -29,8 +29,8 @@
     extraConfig =
       let
         # border | background | text | indicator | child_border
-        focused = "#00000000 #212155d9 #FFFFFF #00000000 #00000000";
-        unfocused = "#00000000 #00000000 #FFFFFF #00000000 #00000000";
+        focused = "#282828d9 #282828d9 #FFFFFF #282828d9 #282828d9";
+        unfocused = "#282828a9 #282828a9 #FFFFFF #282828a9 #282828a9";
         urgent = "#FF0000   #FF0000   #FF0000 #FF0000   #FF0000";
       in
       ''
