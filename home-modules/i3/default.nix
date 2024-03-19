@@ -25,13 +25,17 @@
           position = "top";
         }
       ];
+      gaps = {
+        outer = 4;
+        inner = 6;
+      };
     };
     extraConfig =
       let
         # border | background | text | indicator | child_border
         focused = "#282828d9 #282828d9 #FFFFFF #282828d9 #282828d9";
-        unfocused = "#282828a9 #282828a9 #AAAAAA #282828a9 #282828d9";
-        focused_inactive = "#282828a9 #282828a9 #AAAAAA #282828a9 #282828d9";
+        unfocused = "#282828d9 #282828d9 #AAAAAA #282828d9 #282828d9";
+        focused_inactive = "#282828d9 #282828d9 #AAAAAA #282828d9 #282828d9";
         urgent = "#FF0000   #FF0000   #FF0000 #FF0000   #FF0000";
       in
       ''
