@@ -8,7 +8,8 @@ in
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ../../sys-modules/i3
+      # ../../sys-modules/i3
+      ../../sys-modules/hyprland
     ];
 
   # Use the systemd-boot EFI boot loader.

@@ -5,7 +5,7 @@ in
 {
   imports = importModules [
     "vim"
-    "i3"
+    # "i3"
     "alacritty"
     "bash"
   ];
