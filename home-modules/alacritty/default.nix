@@ -8,7 +8,7 @@
       ];
 
       window = {
-        opacity = lib.mkForce 0.85;
+        opacity = 0.85;
       };
     };
   };
