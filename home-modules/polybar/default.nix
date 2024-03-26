@@ -1,5 +1,8 @@
 { ... }:
 {
-  services.polybar.enable = true;
-  services.polybar.extraConfig = builtins.readFile ./config;
+  services.polybar = {
+    enable = true;
+    extraConfig = builtins.readFile ./config;
+    script = "polybar bar &";
+  };
 }
