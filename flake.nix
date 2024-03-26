@@ -6,9 +6,10 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     alacritty-theme.url = "github:alexghr/alacritty-theme.nix";
+    stylix.url = "github:danth/stylix";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, stylix, ... }: {
     nixosConfigurations = {
       asus-laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -18,6 +19,7 @@
             nixpkgs.overlays = [ inputs.alacritty-theme.overlays.default ];
           })
           ./hosts/asus-laptop/configuration.nix
+          stylix.nixosModules.stylix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
