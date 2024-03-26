@@ -6,10 +6,9 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     alacritty-theme.url = "github:alexghr/alacritty-theme.nix";
-    hyprland.url = "github:hyprwm/Hyprland";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, hyprland, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, ... }: {
     nixosConfigurations = {
       asus-laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -19,7 +18,6 @@
             nixpkgs.overlays = [ inputs.alacritty-theme.overlays.default ];
           })
           ./hosts/asus-laptop/configuration.nix
-          hyprland.homeManagerModules.default
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
