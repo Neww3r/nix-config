@@ -8,7 +8,6 @@ in
     "i3"
     "alacritty"
     "bash"
-    "stylix"
   ];
 
   # Home Manager needs a bit of information about you and the

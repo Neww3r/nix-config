@@ -67,6 +67,14 @@ in
   # File explorer
   programs.thunar.enable = true;
 
+  stylix = {
+    image = pkgs.fetchurl {
+      url = "https://www.pixelstalk.net/wp-content/uploads/2016/05/Epic-Anime-Awesome-Wallpapers.jpg";
+      sha256 = "enQo3wqhgf0FEPHj2coOCvo7DuZv+x5rL/WIo4qPI50=";
+    };
+    polarity = "dark";
+  };
+
   system.stateVersion = "23.11"; # Did you read the comment?
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }
