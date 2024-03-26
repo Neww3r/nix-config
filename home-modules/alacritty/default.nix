@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   programs.alacritty = {
     enable = true;
@@ -8,7 +8,7 @@
       ];
 
       window = {
-        opacity = 0.85;
+        opacity = lib.mkForce 0.85;
       };
     };
   };

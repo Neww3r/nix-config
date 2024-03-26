@@ -67,11 +67,6 @@ in
   # File explorer
   programs.thunar.enable = true;
 
-  stylix = {
-    image = ~/Pictures/wallpapers/wallpaper.png;
-    polarity = "dark";
-  };
-
   system.stateVersion = "23.11"; # Did you read the comment?
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }
