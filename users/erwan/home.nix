@@ -64,8 +64,7 @@ in
     cargo
 
     # Java Programming
-    eclipses.eclipse-java
-    jetbrains.idea-ultimate
+    jdk
     javacc
   ];
 }
