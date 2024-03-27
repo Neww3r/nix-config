@@ -8,7 +8,7 @@ in
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      # ../../sys-modules/i3
+      ../../sys-modules/i3
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -67,14 +67,6 @@ in
 
   # File explorer
   programs.thunar.enable = true;
-
-  #Hyprland
-  programs.hyprland = {
-    # Install the packages from nixpkgs
-    enable = true;
-    # Whether to enable XWayland
-    xwayland.enable = true;
-  };
 
   system.stateVersion = "23.11"; # Did you read the comment?
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

@@ -5,10 +5,9 @@ in
 {
   imports = importModules [
     "vim"
-    # "i3"
+    "i3"
     "alacritty"
     "bash"
-    "hyprland"
   ];
 
   # Home Manager needs a bit of information about you and the
