@@ -42,6 +42,7 @@
         urgent = "#FF0000   #FF0000   #FF0000 #FF0000   #FF0000";
       in
       ''
+        bindsym Print exec --no-startup-id ${pkgs.maim} | ${pkgs.xclip} -selection clipboard -t image/png
         client.focused            ${focused}
         client.focused_inactive   ${focused_inactive}
         client.unfocused          ${unfocused} 

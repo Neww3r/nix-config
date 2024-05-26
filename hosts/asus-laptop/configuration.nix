@@ -38,6 +38,7 @@ in
   hardware = {
     pulseaudio = {
       enable = true;
+      package = pkgs.pulseaudioFull;
     };
 
     bluetooth = {
@@ -64,6 +65,10 @@ in
     firefox
     git
   ];
+
+  services.transmission = {
+    enable = true; #Enable transmission daemon
+  };
 
   # File explorer
   programs.thunar.enable = true;

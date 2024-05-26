@@ -33,6 +33,7 @@ in
     tree
     unzip
     nodejs
+    transmission_4-gtk
 
     # Communication
     discord
