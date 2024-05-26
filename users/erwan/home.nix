@@ -33,6 +33,8 @@ in
     tree
     unzip
     nodejs
+    maim
+    xclip
     transmission_4-gtk
 
     # Communication
