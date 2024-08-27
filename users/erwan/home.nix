@@ -59,10 +59,9 @@ in
     # C Programming
     gcc
     gdb
-    gnumake
+    cmake
     valgrind
     criterion
-    SDL2
 
     # Rust Programming
     rustc
