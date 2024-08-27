@@ -36,6 +36,7 @@ in
     maim
     xclip
     transmission_4-gtk
+    pavucontrol
 
     # Communication
     discord
@@ -61,6 +62,7 @@ in
     gnumake
     valgrind
     criterion
+    SDL2
 
     # Rust Programming
     rustc
