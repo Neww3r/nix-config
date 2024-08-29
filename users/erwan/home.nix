@@ -51,11 +51,11 @@ in
     openresolv
 
     # Python Programming
-    python311
-    python311Packages.pip
-    python311Packages.virtualenv
+    python312
+    python312Packages.pip
+    python312Packages.virtualenv
     jetbrains.pycharm-professional
-    python311Packages.autopep8
+    python312Packages.autopep8
 
     # C Programming
     gcc
