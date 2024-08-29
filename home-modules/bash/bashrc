@@ -5,3 +5,4 @@ parse_git_branch() {
 }
 export PS1="\[\e[92m\]\u@\h \[\e[32m\]\w \[\e[91m\]\$(parse_git_branch)\[\e[95m\]$ \[\e[00m\]"
 
+export PATH="/home/erwan/.local/bin:$PATH"
