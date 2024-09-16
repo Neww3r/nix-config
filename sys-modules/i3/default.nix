@@ -9,8 +9,9 @@
       gnome.enable = true;
     };
     displayManager = {
-      defaultSession = "none+i3";
       gdm.enable = true;
+      lightdm.enable = true;
+      defaultSession = "none+i3";
     };
     windowManager.i3 = {
       enable = true;
