@@ -5,11 +5,11 @@
   services.xserver = {
     enable = true;
     desktopManager = {
-      xterm.enable = false;
+      # xterm.enable = false;
       gnome.enable = true;
     };
     displayManager = {
-      gdm.enable = true;
+      # gdm.enable = true;
       lightdm.enable = true;
       defaultSession = "none+i3";
     };
