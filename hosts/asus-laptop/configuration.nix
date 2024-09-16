@@ -15,7 +15,6 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.systemd-boot.configurationLimit = 5;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot/EFI";
 
   networking.hostName = "asus-laptop"; # Define your hostname.
   # Pick only one of the below networking options.
