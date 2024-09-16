@@ -18,6 +18,11 @@
           always = true;
           notification = false;
         }
+        {
+          command = "${pkgs.autorandr}/bin/autorandr --change";
+          always = true;
+          notification = false;
+        }
       ];
       bars = [
         {
