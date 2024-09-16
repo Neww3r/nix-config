@@ -58,7 +58,7 @@ in
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
-  
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${user} = {
     isNormalUser = true;
@@ -76,6 +76,7 @@ in
     vim
     firefox
     git
+    autorandr
   ];
 
   services.transmission = {
