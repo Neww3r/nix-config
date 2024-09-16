@@ -30,7 +30,7 @@
       ];
       gaps = {
         # outer = 4;
-        inner = 10;
+        # inner = 10;
       };
     };
     extraConfig =
