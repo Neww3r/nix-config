@@ -6,9 +6,11 @@
     enable = true;
     desktopManager = {
       xterm.enable = false;
+      gnome.enable = true;
     };
     displayManager = {
-      defaultSession = "none+i3";
+      defaultSession = "gnome+i3";
+      gdm.enable = true;
     };
     windowManager.i3 = {
       enable = true;
