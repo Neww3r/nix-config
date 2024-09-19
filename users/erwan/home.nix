@@ -60,7 +60,7 @@ in
     # C Programming
     gcc
     gdb
-    cmake
+    gnumake
     valgrind
     criterion
 
