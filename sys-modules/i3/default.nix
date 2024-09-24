@@ -2,6 +2,7 @@
 {
   environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /run/current-system/sw
   # Enable the X11 windowing system.
+
   services.xserver = {
     enable = true;
     desktopManager = {
