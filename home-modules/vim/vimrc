@@ -58,16 +58,16 @@ set textwidth=79
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 " Ignore case on search
-set ignorecase
+" set ignorecase
 
 " Ignore case unless there is an uppercase letter in the pattern
-set smartcase
+" set smartcase
 
 " Move cursor to the matched string
-set incsearch
+" set incsearch
 
 " Don't highlight matched strings
-set nohlsearch
+" set nohlsearch
 
 " Open the quickfix window if there are errors, or close it if there are no
 " errors left

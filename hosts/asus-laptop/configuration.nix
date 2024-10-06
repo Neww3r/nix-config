@@ -85,6 +85,8 @@ in
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    pkgs.man-pages
+    pkgs.man-pages-posix
     vim
     firefox
     git
