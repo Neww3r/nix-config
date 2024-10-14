@@ -5,13 +5,15 @@
     plugins = with pkgs.vimPlugins; [
       markdown-preview-nvim
       coc-nvim
-      coc-rust-analyzer
+      # coc-rust-analyzer
+      coc-snippets
       gruvbox
       vim-airline
       vim-airline-themes
       vim-fugitive
       vim-wakatime
       vim-surround
+      vim-snippets
     ];
     extraConfig = builtins.readFile ./vimrc;
   };
