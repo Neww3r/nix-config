@@ -91,6 +91,7 @@ in
     firefox
     git
     autorandr
+    blueman
   ];
 
   services.transmission = {
