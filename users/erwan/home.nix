@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 let
   importModules = modules: (map (path: ../../home-modules/${path}) modules);
 in
