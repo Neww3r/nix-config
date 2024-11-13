@@ -55,6 +55,11 @@ in
     mediaKeys.enable = true;
   };
 
+  # Bluetooth settings
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+  services.blueman.enable = true;
+
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -91,7 +96,6 @@ in
     firefox
     git
     autorandr
-    blueman
   ];
 
   services.transmission = {
