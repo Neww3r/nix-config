@@ -61,6 +61,7 @@ in
     gcc
     gdb
     gnumake
+    bear
     valgrind
     criterion
 
