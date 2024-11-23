@@ -64,6 +64,7 @@ in
     bear
     valgrind
     criterion
+    meson
 
     # Rust Programming
     rustc
