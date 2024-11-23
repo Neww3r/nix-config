@@ -65,6 +65,7 @@ in
     valgrind
     criterion
     meson
+    ninja
 
     # Rust Programming
     rustc
