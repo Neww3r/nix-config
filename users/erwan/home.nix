@@ -64,7 +64,6 @@ in
     bear
     valgrind
     criterion
-    openssl.dev
     meson
     ninja
 
