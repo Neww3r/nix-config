@@ -64,8 +64,10 @@ in
     bear
     valgrind
     criterion
+    openssl
     meson
     ninja
+    pkg-config
 
     # Rust Programming
     rustc
