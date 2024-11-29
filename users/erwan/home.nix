@@ -35,12 +35,10 @@ in
     nodejs
     maim
     xclip
-    transmission_4-gtk
     pavucontrol
 
     # Communication
     discord
-    zoom-us
 
     # Terminal
     alacritty
@@ -63,7 +61,6 @@ in
     gnumake
     bear
     valgrind
-    criterion
     meson
     ninja
 
