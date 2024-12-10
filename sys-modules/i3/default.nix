@@ -3,10 +3,7 @@
   environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /run/current-system/sw
   # Enable the X11 windowing system.
 
-  services.displayManager = {
-    gdm.enable = true;
-    defaultSession = "none+i3";
-  };
+  services.displayManager.defaultSession = "none+i3";
 
   services.xserver = {
     enable = true;
@@ -14,6 +11,7 @@
       xterm.enable = false;
       gnome.enable = true;
     };
+    displayManager.gdm.enable = true;
     windowManager.i3 = {
       enable = true;
       extraPackages = with pkgs; [
