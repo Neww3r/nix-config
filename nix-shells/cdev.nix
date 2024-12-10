@@ -10,4 +10,5 @@ stdenv.mkDerivation {
     curl
     criterion
   ];
+  hardeningDisable = [ "fortify" ]; # Disable `_FORTIFY_SOURCE`
 }
