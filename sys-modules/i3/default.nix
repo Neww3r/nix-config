@@ -3,15 +3,16 @@
   environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /run/current-system/sw
   # Enable the X11 windowing system.
 
+  services.displayManager = {
+    gdm.enable = true;
+    defaultSession = "none+i3";
+  };
+
   services.xserver = {
     enable = true;
     desktopManager = {
       xterm.enable = false;
       gnome.enable = true;
-    };
-    displayManager = {
-      gdm.enable = true;
-      defaultSession = "none+i3";
     };
     windowManager.i3 = {
       enable = true;
@@ -28,7 +29,7 @@
 
 
   # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
+  services.libinput.enable = true;
   # Enable CUPS to print documents.
   services.printing.enable = true;
   # Mount, trash, and other functionalities
