@@ -22,7 +22,6 @@ in
   home.packages = with pkgs; [
 
     # Files
-    cinnamon.pix
     feh
     vlc
     libreoffice
