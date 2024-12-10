@@ -3,7 +3,7 @@
   programs.alacritty = {
     enable = true;
     settings = {
-      import = [
+      general.import = [
         pkgs.alacritty-theme.gruvbox_material_medium_dark
       ];
 
