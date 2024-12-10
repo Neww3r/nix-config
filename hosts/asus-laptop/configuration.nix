@@ -49,12 +49,6 @@ in
     LC_TIME = "fr_FR.UTF-8";
   };
 
-  # Enable sound.
-  sound = {
-    enable = true;
-    mediaKeys.enable = true;
-  };
-
   # Mediakeys for headset
   systemd.user.services.mpris-proxy = {
     description = "Mpris proxy";
