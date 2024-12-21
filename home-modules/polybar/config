@@ -115,8 +115,8 @@ label-mounted =  %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.disabled}
 
-[module/alsa]
-type = internal/volume
+[module/audio]
+type = internal/alsa
 
 format-volume-prefix = "VOL "
 format-volume-prefix-foreground = ${colors.primary}
