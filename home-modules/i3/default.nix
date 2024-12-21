@@ -26,8 +26,8 @@
       ];
       bars = [ ];
       gaps = {
-        # outer = 4;
-        # inner = 10;
+        outer = 4;
+        inner = 10;
       };
     };
     extraConfig =
