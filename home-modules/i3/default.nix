@@ -25,10 +25,7 @@
         }
       ];
       bars = [ ];
-      #gaps = {
-      #  outer = 4;
-      #  inner = 4;
-      #};
+      window.titlebar = false;
       defaultWorkspace = "workspace number 1";
     };
     extraConfig =
