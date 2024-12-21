@@ -69,21 +69,10 @@ in
   };
   services.blueman.enable = true;
 
-  # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  nixpkgs.config.pulseaudio = true;
+  hardware.pulseaudio.enable = true;
+  hardware.pulseaudio.support32Bit = true; ## If compatibility with 32-bit applications is desired.
   security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
-  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${user} = {
