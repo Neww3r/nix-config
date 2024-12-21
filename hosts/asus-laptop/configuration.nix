@@ -49,35 +49,28 @@ in
     LC_TIME = "fr_FR.UTF-8";
   };
 
-  # Mediakeys for headset
-  systemd.user.services.mpris-proxy = {
-    description = "Mpris proxy";
-    after = [ "network.target" "sound.target" ];
-    wantedBy = [ "default.target" ];
-    serviceConfig.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
-  };
-
   # Bluetooth settings
-  hardware.bluetooth = {
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  hardware.bluetooth.powerOnBoot = true;
+  services.blueman.enable = true;
+
+  # Pulseaudio settings
+  nixpkgs.config.pulseaudio = true;
+  hardware.pulseaudio = {
     enable = true;
-    powerOnBoot = true;
+    package = pkgs.pulseaudioFull;
+    support32Bit = true; # If compatibility with 32-bit applications is desired.
     settings = {
       General = {
         Enable = "Source,Sink,Media,Socket";
       };
     };
   };
-  services.blueman.enable = true;
-
-  nixpkgs.config.pulseaudio = true;
-  hardware.pulseaudio.enable = true;
-  hardware.pulseaudio.support32Bit = true; ## If compatibility with 32-bit applications is desired.
-  security.rtkit.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${user} = {
     isNormalUser = true;
-    description = "Erwan";
+    description = "Le R";
     extraGroups = [ "audio" "networkmanager" "wheel" ];
     initialPassword = "password";
   };
