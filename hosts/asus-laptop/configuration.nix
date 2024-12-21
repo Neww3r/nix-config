@@ -50,8 +50,15 @@ in
   };
 
   # Bluetooth settings
-  hardware.bluetooth.enable = true; # enables support for Bluetooth
-  hardware.bluetooth.powerOnBoot = true;
+  hardware.bluetooth = {
+    enable = true; # enables support for Bluetooth
+    powerOnBoot = true;
+    settings = {
+      General = {
+        Enable = "Source,Sink,Media,Socket";
+      };
+    };
+  };
   services.blueman.enable = true;
 
   # Pulseaudio settings
@@ -60,11 +67,6 @@ in
     enable = true;
     package = pkgs.pulseaudioFull;
     support32Bit = true; # If compatibility with 32-bit applications is desired.
-    settings = {
-      General = {
-        Enable = "Source,Sink,Media,Socket";
-      };
-    };
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
