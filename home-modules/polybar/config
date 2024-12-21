@@ -110,7 +110,7 @@ interval = 25
 
 mount-0 = /
 
-label-mounted =  %percentage_used%%
+label-mounted = %{F#77B5FE}%{F-} %percentage_used%%
 
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.disabled}
@@ -118,13 +118,13 @@ label-unmounted-foreground = ${colors.disabled}
 [module/audio]
 type = internal/alsa
 
-format-volume-prefix = "VOL "
+format-volume-prefix = "%{F#77B5FE}%{F-} "
 format-volume-prefix-foreground = ${colors.primary}
 format-volume = <label-volume>
 
 label-volume = %percentage%%
 
-label-muted = muted
+label-muted = 
 label-muted-foreground = ${colors.disabled}
 
 [module/xkeyboard]
@@ -163,7 +163,7 @@ label-disconnected = %{F#F0C674}%ifname%%{F#707880} disconnected
 [module/wlan]
 inherit = network-base
 interface-type = wireless
-label-connected = %{F#F0C674}%ifname%%{F-} %essid% %local_ip%
+label-connected = %{F#77B5FE}%{F-} %essid%
 
 [module/eth]
 inherit = network-base
@@ -218,7 +218,7 @@ time-format = %H:%M
 ;   <bar-capacity>
 ;   <ramp-capacity>
 ;   <animation-charging>
-format-charging = <animation-charging> <label-charging>
+format-charging = %{F#00FF00}<animation-charging>%{F-} <label-charging>
 
 ; Available tags:
 ;   <label-discharging> (default)
@@ -271,11 +271,11 @@ label-full = Fully charged
 label-low = BATTERY LOW
 
 ; Only applies if <ramp-capacity> is used
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
+ramp-capacity-0 = %{F#FF0000}%{F-}
+ramp-capacity-1 = %{F#FFA500}%{F-}
+ramp-capacity-2 = %{F#00FF00}%{F-}
+ramp-capacity-3 = %{F#00FF00}%{F-}
+ramp-capacity-4 = %{F#00FF00}%{F-}
 
 ; Only applies if <bar-capacity> is used
 bar-capacity-width = 10
