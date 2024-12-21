@@ -8,6 +8,7 @@ in
     "i3"
     "alacritty"
     "bash"
+    "polybar"
   ];
 
   # Home Manager needs a bit of information about you and the
