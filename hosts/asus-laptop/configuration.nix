@@ -107,8 +107,9 @@ in
     autorandr
   ];
 
-  fonts.packages = [
-    pkgs.nerd-fonts.jetbrains-mono
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+    font-awesome
   ];
 
   services.transmission = {
