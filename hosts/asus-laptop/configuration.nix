@@ -107,6 +107,10 @@ in
     autorandr
   ];
 
+  fonts.packages = [
+    (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+  ];
+
   services.transmission = {
     enable = true; #Enable transmission daemon
   };
