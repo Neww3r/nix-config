@@ -19,9 +19,8 @@ in
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  fonts.fontconfig.enable = true;
-  fonts.fonts = [
-    pkgs.nerdfonts.JetBrainsMono
+  fonts.packages = [
+    (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 
   home.packages = with pkgs; [
