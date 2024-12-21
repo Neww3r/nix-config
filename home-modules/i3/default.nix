@@ -25,10 +25,11 @@
         }
       ];
       bars = [ ];
-      gaps = {
-        outer = 4;
-        inner = 10;
-      };
+      #gaps = {
+      #  outer = 4;
+      #  inner = 4;
+      #};
+      defaultWorkspace = "workspace number 1";
     };
     extraConfig =
       let
