@@ -54,7 +54,7 @@ font-2 = Font Awesome 6 Free Solid:pixelsize=12;2
 font-3 = Font Awesome 6 Brands:pixelsize=12;2
 
 modules-left = xworkspaces xwindow
-modules-right = wlan pulseaudio filesystem battery date
+modules-right = wlan audio filesystem battery date
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -115,8 +115,8 @@ label-mounted =  %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.disabled}
 
-[module/pulseaudio]
-type = internal/pulseaudio
+[module/alsa]
+type = internal/volume
 
 format-volume-prefix = "VOL "
 format-volume-prefix-foreground = ${colors.primary}
