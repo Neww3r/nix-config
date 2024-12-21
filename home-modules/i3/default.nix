@@ -24,6 +24,7 @@
           notification = false;
         }
       ];
+      bars = [ ];
       gaps = {
         # outer = 4;
         # inner = 10;
