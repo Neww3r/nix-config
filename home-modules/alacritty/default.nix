@@ -7,7 +7,7 @@
         pkgs.alacritty-theme.gruvbox_material_medium_dark
       ];
       font.size = 10;
-      window.opacity = 0.85;
+      window.opacity = 1.00;
     };
   };
 }
