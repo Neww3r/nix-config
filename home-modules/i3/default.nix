@@ -23,6 +23,11 @@
           always = true;
           notification = false;
         }
+        {
+          command = "systemctl --user restart polybar";
+          always = true;
+          notification = false;
+        }
       ];
       bars = [ ];
       window = {
