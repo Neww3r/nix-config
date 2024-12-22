@@ -5,11 +5,6 @@
     enable = true;
     terminal = "${pkgs.alacritty}/bin/alacritty";
     theme = "./launcher.rasi";
-    extraConfig = {
-      modi = "drun";
-      show-icons = true;
-      sort = true;
-    };
   };
 
   home.file = {
