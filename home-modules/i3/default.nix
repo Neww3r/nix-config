@@ -25,7 +25,10 @@
         }
       ];
       bars = [ ];
-      window.titlebar = false;
+      window = {
+        titlebar = false;
+        hideEdgeBorders = "smart";
+      };
       defaultWorkspace = "workspace number 1";
     };
     extraConfig =
