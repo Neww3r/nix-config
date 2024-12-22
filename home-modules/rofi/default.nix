@@ -5,10 +5,17 @@
     enable = true;
     terminal = "${pkgs.alacritty}/bin/alacritty";
     theme = "./launcher.rasi";
-    plugins = [
-      pkgs.rofi-emoji
-      pkgs.rofi-calc
-      pkgs.rofi-power-menu
-    ];
+  };
+
+  extraConfig = {
+    modi = "drun";
+    show-icons = true;
+    sort = true;
+  };
+
+  home.file = {
+    ".config/rofi/gruvbox.rasi".source = ./gruvbox.rasi;
+    ".config/rofi/fonts.rasi".source = ./fonts.rasi;
+    ".config/rofi/launcher.rasi".source = ./launcher.rasi;
   };
 }
