@@ -108,10 +108,6 @@ in
     font-awesome
   ];
 
-  services.transmission = {
-    enable = true; #Enable transmission daemon
-  };
-
   # File explorer
   programs.thunar.enable = true;
 
