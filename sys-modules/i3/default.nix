@@ -5,18 +5,19 @@
 
   services.displayManager.defaultSession = "none+i3";
 
+  # Enable touchpad support (enabled default in most desktopManager).
+  services.libinput.enable = true;
+
   services.xserver = {
     enable = true;
+
     desktopManager = {
       xterm.enable = false;
-      gnome.enable = true;
     };
-    displayManager.gdm.enable = true;
+
     windowManager.i3 = {
       enable = true;
       extraPackages = with pkgs; [
-        dmenu
-        i3status
         i3lock
       ];
     };
@@ -24,14 +25,4 @@
     xkb.layout = "us";
     xkb.options = "caps:escape";
   };
-
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  services.libinput.enable = true;
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-  # Mount, trash, and other functionalities
-  services.gvfs.enable = true;
-  # Thumbnail support for images
-  services.tumbler.enable = true;
 }
