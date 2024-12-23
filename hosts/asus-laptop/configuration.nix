@@ -94,6 +94,7 @@ in
     firefox
     git
     autorandr
+    alsa-utils
   ];
 
   fonts.packages = with pkgs; [
