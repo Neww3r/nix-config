@@ -26,7 +26,7 @@
         }
         {
           command = "${pkgs.polybar}/bin/polybar jmetapedesbarres &";
-          always = true;
+          always = false;
           notification = false;
         }
       ];
