@@ -7,6 +7,7 @@
     config = {
       modifier = "Mod4";
       terminal = "alacritty";
+      menu = "${pkgs.rofi}/bin/rofi -show";
       startup = [
         {
           command = "${pkgs.feh}/bin/feh --bg-fill ~/Pictures/wallpapers/wallpaper.png";
