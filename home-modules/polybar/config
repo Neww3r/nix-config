@@ -54,7 +54,7 @@ font-2 = Font Awesome 6 Free Solid:pixelsize=12;2
 font-3 = Font Awesome 6 Brands:pixelsize=12;2
 
 modules-left = xworkspaces xwindow
-modules-right = wlan audio filesystem battery date
+modules-right = wlan volume filesystem battery date
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -115,17 +115,26 @@ label-mounted = %{F#77B5FE}%{F-} %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.disabled}
 
-[module/audio]
-type = internal/alsa
+[module/volume]
+type = internal/pulseaudio
 
-format-volume-prefix = "%{F#77B5FE}%{F-} "
-format-volume-prefix-foreground = ${colors.primary}
-format-volume = <label-volume>
+; Sink to be used, if it exists (find using `pacmd list-sinks`, name field)
+; If not, uses default sink
+; sink = alsa_output.pci-0000_12_00.3.analog-stereo
 
-label-volume = %percentage%%
+; Use PA_VOLUME_UI_MAX (~153%) if true, or PA_VOLUME_NORM (100%) if false
+; Default: true
+use-ui-max = true
 
-label-muted = 
-label-muted-foreground = ${colors.disabled}
+; Interval for volume increase/decrease (in percent points)
+; Default: 5
+interval = 5
+
+; Reverses the increment/decrement on scroll event. Set this to true if you are
+; using natural scrolling option on your touchpad.
+; New in version 3.7.0
+; Default: false
+reverse-scroll = false
 
 [module/xkeyboard]
 type = internal/xkeyboard

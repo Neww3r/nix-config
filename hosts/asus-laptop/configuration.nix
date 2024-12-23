@@ -63,15 +63,21 @@ in
 
   # Pipewire settings
   # rtkit is optional but recommended
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true; # if not already enabled
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-  };
+  #security.rtkit.enable = true;
+  #services.pipewire = {
+  #  enable = true; # if not already enabled
+  #  alsa.enable = true;
+  #  alsa.support32Bit = true;
+  #  pulse.enable = true;
+  #  # If you want to use JACK applications, uncomment this
+  #  #jack.enable = true;
+  #};
+
+  # Pulseaudio settings
+  nixpkgs.config.pulseaudio = true;
+  hardware.pulseaudio.enable = true;
+  hardware.pulseaudio.support32Bit = true;
+  hardware.pulseaudio.extraConfig = "load-module module-combine-sink";
 
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
