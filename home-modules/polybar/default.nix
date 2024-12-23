@@ -3,6 +3,6 @@
   services.polybar = {
     enable = true;
     extraConfig = builtins.readFile ./config;
-    script = "polybar example &";
+    script = "";
   };
 }

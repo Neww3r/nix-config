@@ -25,7 +25,7 @@
           notification = false;
         }
         {
-          command = "systemctl --user restart polybar";
+          command = "${pkgs.polybar}/bin/polybar jmetapedesbarres &";
           always = true;
           notification = false;
         }
