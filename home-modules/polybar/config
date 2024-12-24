@@ -146,7 +146,7 @@ headphone-mixer = Headphone
 ; $ amixer controls | sed -r "/CARD/\!d; s/.*=([0-9]+).*name='([^']+)'.*/printf '%3.0f: %s\n' '\1' '\2'/e" | sort
 ; You may also need to use `amixer -c # controls` as above for the mixer names
 ; Default: none
-headphone-id = 9
+headphone-id = 17
 
 ; Use volume mapping (similar to amixer -M and alsamixer), where the increase in volume is linear to the ear
 ; Default: false
