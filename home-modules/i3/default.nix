@@ -25,7 +25,7 @@
           notification = false;
         }
         {
-          command = "${pkgs.polybar}/bin/polybar jmetapedesbarres &> ~/i3_logs";
+          command = "${pkgs.polybar}/bin/polybar jmetapedesbarres &";
           always = false;
           notification = false;
         }
