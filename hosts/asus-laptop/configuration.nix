@@ -61,30 +61,28 @@ in
   };
   services.blueman.enable = true;
 
-  # Pipewire settings
-  # rtkit is optional but recommended
-  #security.rtkit.enable = true;
-  #services.pipewire = {
-  #  enable = true; # if not already enabled
-  #  alsa.enable = true;
-  #  alsa.support32Bit = true;
-  #  pulse.enable = true;
-  #  # If you want to use JACK applications, uncomment this
-  #  #jack.enable = true;
-  #};
+  # Enable sound with pipewire.
+  hardware.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    # If you want to use JACK applications, uncomment this
+    #jack.enable = true;
 
-  # Pulseaudio settings
-  nixpkgs.config.pulseaudio = true;
-  hardware.pulseaudio.enable = true;
-  hardware.pulseaudio.support32Bit = true;
-  hardware.pulseaudio.extraConfig = "load-module module-combine-sink";
+    # use the example session manager (no others are packaged yet so this is enabled by default,
+    # no need to redefine it in your config for now)
+    #media-session.enable = true;
+  };
 
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${user} = {
     isNormalUser = true;
     description = "Le R";
-    extraGroups = [ "audio" "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" ];
     initialPassword = "password";
   };
 
@@ -156,6 +154,6 @@ in
     amdgpuBusId = "PCI:5:0:0";
   };
 
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "24.11"; # Did you read the comment?
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }
