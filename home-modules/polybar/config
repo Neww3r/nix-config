@@ -164,7 +164,7 @@ format-volume = %{F#77B5FE}<ramp-volume>%{F-} <label-volume>
 
 ; Available tokens:
 ;   %percentage% (default)
-label-muted = %{F#FF0000}%{F-} muted
+label-muted = %{F#FF0000}%{F-} muted
 label-muted-foreground = #66
 
 ; Only applies if <ramp-volume> is used
