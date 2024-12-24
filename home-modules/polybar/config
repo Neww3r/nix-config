@@ -121,9 +121,9 @@ type = internal/alsa
 ; Soundcard to be used
 ; Usually in the format hw:# where # is the card number
 ; You can find the different card numbers in `/proc/asound/cards`
-master-soundcard = hw:2
-speaker-soundcard = hw:2
-headphone-soundcard = hw:2
+master-soundcard = hw:1
+speaker-soundcard = hw:1
+headphone-soundcard = hw:1
 
 ; Name of the master, speaker and headphone mixers
 ; Use the following command to list available mixer controls:
