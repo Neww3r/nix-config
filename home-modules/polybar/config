@@ -123,7 +123,6 @@ type = internal/alsa
 ; You can find the different card numbers in `/proc/asound/cards`
 master-soundcard = hw:1
 speaker-soundcard = hw:1
-headphone-soundcard = hw:1
 
 ; Name of the master, speaker and headphone mixers
 ; Use the following command to list available mixer controls:
@@ -138,15 +137,6 @@ master-mixer = Master
 ; Optionally define speaker and headphone mixers
 ; Default: none
 speaker-mixer = Speaker
-; Default: none
-headphone-mixer = Headphone
-
-; NOTE: This is required if headphone_mixer is defined
-; Use the following command to list available device controls
-; $ amixer controls | sed -r "/CARD/\!d; s/.*=([0-9]+).*name='([^']+)'.*/printf '%3.0f: %s\n' '\1' '\2'/e" | sort
-; You may also need to use `amixer -c # controls` as above for the mixer names
-; Default: none
-headphone-id = 17
 
 ; Use volume mapping (similar to amixer -M and alsamixer), where the increase in volume is linear to the ear
 ; Default: false
