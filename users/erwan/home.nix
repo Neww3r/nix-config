@@ -70,6 +70,7 @@ in
     cargo
 
     # Java Programming
+    jetbrains.idea-ultimate
     jdk
     javacc
   ];

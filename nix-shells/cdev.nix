@@ -3,6 +3,7 @@ stdenv.mkDerivation {
   name = "c-dev-environment";
   buildInputs = [
     pkg-config
+    clang
     SDL2
     SDL2_image
     SDL2_ttf
