@@ -82,7 +82,7 @@ in
   users.users.${user} = {
     isNormalUser = true;
     description = "Le R";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "docker" "networkmanager" "wheel" ];
     initialPassword = "password";
   };
 
@@ -100,6 +100,8 @@ in
     autorandr
     alsa-utils
   ];
+
+  virtualisation.docker.enable = true;
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
