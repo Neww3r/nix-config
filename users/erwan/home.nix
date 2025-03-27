@@ -49,11 +49,15 @@ in
     openvpn
     openresolv
 
+    # IDE & code editor
+    vscode
+    jetbrains.pycharm-professional
+    jetbrains.idea-ultimate
+
     # Python Programming
     python312
     python312Packages.pip
     python312Packages.virtualenv
-    jetbrains.pycharm-professional
     python312Packages.autopep8
 
     # C Programming
@@ -70,7 +74,6 @@ in
     cargo
 
     # Java Programming
-    jetbrains.idea-ultimate
     jdk
     javacc
   ];
