@@ -53,6 +53,7 @@ in
     vscode
     jetbrains.pycharm-professional
     jetbrains.idea-ultimate
+    jetbrains.webstorm
 
     # Python Programming
     python312
