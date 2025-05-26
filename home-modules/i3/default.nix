@@ -46,12 +46,12 @@
         urgent = "#FF0000   #FF0000   #FF0000 #FF0000   #FF0000";
       in
       ''
-        bindsym Mod4+l exec --no-startup-id i3lock -i ~/Pictures/wallpapers/lockscreen.png
-        bindsym Ctrl+Shift+p exec --no-startup-id maim | xclip -selection clipboard -t image/png
+        bindsym Mod4+l exec --no-startup-id ${pkgs.i3lock}/bin/i3lock -i ~/Pictures/wallpapers/lockscreen.png
+        bindsym Mod4+p exec --no-startup-id ${pkgs.maim}/bin/maim -s | ${pkgs.xclip}/bin/xclip -selection clipboard -t image/png
         client.focused            ${focused}
         client.focused_inactive   ${focused_inactive}
-        client.unfocused          ${unfocused} 
-        client.urgent             ${urgent} 
+        client.unfocused          ${unfocused}
+        client.urgent             ${urgent}
       '';
   };
 }
