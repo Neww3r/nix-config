@@ -99,16 +99,8 @@ in
     git
     autorandr
     alsa-utils
-    resolvconf
     openvpn
   ];
-
-  services.openvpn = {
-    enable = true;
-    config = /etc/openvpn/your-vpn-config.ovpn;
-    # If you're using `update-resolv-conf` in your OpenVPN config
-    resolvconf = true;
-  };
 
   virtualisation.docker.enable = true;
 
