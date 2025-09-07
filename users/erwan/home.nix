@@ -23,6 +23,10 @@ in
 
   home.packages = with pkgs; [
 
+    # Style
+    nwg-look
+    catppuccin-gtk
+
     # Files
     feh
     vlc
@@ -44,10 +48,6 @@ in
     # Terminal
     alacritty
     xterm
-
-    # VPN
-    openvpn
-    openresolv
 
     # IDE & code editor
     vscode
