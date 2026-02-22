@@ -30,7 +30,6 @@ in
     # Files
     feh
     vlc
-    libreoffice
 
     # Tools
     wget
@@ -51,9 +50,6 @@ in
 
     # IDE & code editor
     vscode
-    jetbrains.pycharm-professional
-    jetbrains.idea-ultimate
-    jetbrains.webstorm
 
     # Python Programming
     python312
@@ -76,6 +72,5 @@ in
 
     # Java Programming
     jdk
-    javacc
   ];
 }

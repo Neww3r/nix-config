@@ -24,9 +24,6 @@
 
     ### Language servers for autocompletion ###
 
-    # C
-    clang-tools_16
-
     # Nix
     nil
     nixpkgs-fmt
