@@ -3,7 +3,6 @@
   programs.vim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [
-      markdown-preview-nvim
       coc-nvim
       # coc-rust-analyzer
       coc-snippets
@@ -27,9 +26,6 @@
     # Nix
     nil
     nixpkgs-fmt
-
-    # Rust
-    rust-analyzer
   ];
 
   home.file = {

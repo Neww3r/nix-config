@@ -23,49 +23,41 @@ in
 
   home.packages = with pkgs; [
 
-    # Style
-    nwg-look
-    catppuccin-gtk
-
     # Files
-    feh
     vlc
 
     # Tools
     claude-code
     wget
-    xsel
     tree
     unzip
-    nodejs
-    maim
     xclip
     pavucontrol
 
     # Communication
     discord
 
-    # Terminal
-    alacritty
-    xterm
-
-    # IDE & code editor
-    vscode
-
-    # Python Programming
-    python312
-    python312Packages.pip
-    python312Packages.virtualenv
-    python312Packages.autopep8
-
-    # C Programming
-    gcc
-    gdb
-    gnumake
-    bear
-    valgrind
-    meson
-    ninja
-
   ];
+
+  # VS Code with declarative config
+  programs.vscode = {
+    enable = true;
+    profiles.default.extensions = with pkgs.vscode-extensions; [
+      # Add extensions here, e.g.:
+      # ms-python.python
+      # jnoortheen.nix-ide
+    ];
+  };
+
+  # GTK theming
+  gtk = {
+    enable = true;
+    theme = {
+      name = "catppuccin-mocha-mauve-standard";
+      package = pkgs.catppuccin-gtk.override {
+        variant = "mocha";
+        accents = [ "mauve" ];
+      };
+    };
+  };
 }

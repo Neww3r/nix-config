@@ -22,6 +22,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";
             home-manager.users.erwan = import ./users/erwan/home.nix;
           }
         ];
