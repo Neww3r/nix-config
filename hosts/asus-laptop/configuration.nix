@@ -9,8 +9,8 @@ in
       ./hardware-configuration.nix
       ./nvidia.nix
       ../../sys-modules/desktop
-      # Both sessions coexist; comment one out to drop it entirely.
-      ../../sys-modules/i3
+      # Wayland-only setup; uncomment i3 to bring the X11 session back.
+      # ../../sys-modules/i3
       ../../sys-modules/sway
     ];
 
