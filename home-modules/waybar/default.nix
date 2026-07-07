@@ -17,25 +17,29 @@
           max-length = 60;
         };
 
+        # Icons are Nerd Font glyphs (nerd-fonts.jetbrains-mono).
         network = {
           interval = 5;
-          format-wifi = "  {essid}";
-          format-ethernet = "{ifname} {ipaddr}";
-          format-disconnected = "{ifname} disconnected";
+          format-wifi = "{icon} {essid}";
+          format-ethernet = "󰈀 {ifname} {ipaddr}";
+          format-disconnected = "󰤮 disconnected";
+          format-icons = [ "󰤯" "󰤟" "󰤢" "󰤥" "󰤨" ];
+          tooltip-format-wifi = "{essid} ({signalStrength}%) {ipaddr}";
         };
 
         pulseaudio = {
           format = "{icon} {volume}%";
-          format-muted = " muted";
+          format-muted = "󰝟 muted";
           format-icons = {
-            default = [ "🔈" "🔊" ];
+            headphone = "󰋋";
+            default = [ "󰕿" "󰖀" "󰕾" ];
           };
         };
 
         disk = {
           interval = 25;
           path = "/";
-          format = " {percentage_used}%";
+          format = "󰋊 {percentage_used}%";
         };
 
         battery = {
@@ -46,12 +50,12 @@
             critical = 5;
           };
           format = "{icon} {capacity}%";
-          format-charging = " {capacity}%";
-          format-icons = [ "" "" "" "" "" ];
+          format-charging = "󰂄 {capacity}%";
+          format-icons = [ "󰁺" "󰁻" "󰁽" "󰁿" "󰂁" "󰁹" ];
         };
 
         clock = {
-          format = "{:%H:%M}";
+          format = "󰥔 {:%H:%M}";
           tooltip-format = "{:%Y-%m-%d %H:%M:%S}";
         };
       }
