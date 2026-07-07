@@ -52,18 +52,9 @@ in
   environment.systemPackages = with pkgs; [
     man-pages
     man-pages-posix
-    google-chrome
     git
-    autorandr
-    alsa-utils
     openvpn
-    brightnessctl
-    playerctl
-    wireplumber
   ];
-
-  # Let users in the "video" group control screen backlight (media keys).
-  services.udev.packages = [ pkgs.brightnessctl ];
 
   virtualisation.docker.enable = true;
 

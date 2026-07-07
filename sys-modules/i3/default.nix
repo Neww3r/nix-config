@@ -2,6 +2,9 @@
 {
   environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /run/current-system/sw
 
+  # X11 monitor profile switcher; i3 runs `autorandr --change` at startup.
+  environment.systemPackages = [ pkgs.autorandr ];
+
   services.xserver = {
     enable = true;
 

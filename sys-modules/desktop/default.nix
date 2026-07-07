@@ -34,6 +34,18 @@
   };
   services.blueman.enable = true;
 
+  # Audio/media/backlight CLI tools; the WM keybindings call them by store
+  # path, this only puts them on the interactive PATH.
+  environment.systemPackages = with pkgs; [
+    alsa-utils
+    playerctl
+    wireplumber
+    brightnessctl
+  ];
+
+  # Let users in the "video" group control screen backlight (media keys).
+  services.udev.packages = [ pkgs.brightnessctl ];
+
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
     font-awesome

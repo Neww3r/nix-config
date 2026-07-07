@@ -3,6 +3,9 @@
   # picom is started from the i3 startup list below rather than as a systemd
   # user service: the service would also be pulled into the sway (Wayland)
   # session, where picom cannot run.
+  # X11 clipboard tool (wl-clipboard is its counterpart in the sway module).
+  home.packages = with pkgs; [ xclip ];
+
   xsession.enable = true;
   xsession.windowManager.i3 = {
     enable = true;
