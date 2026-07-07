@@ -1,20 +1,17 @@
 { config, pkgs, ... }:
-let
-  importModules = modules: (map (path: ../../home-modules/${path}) modules);
-in
 {
-  imports = importModules [
-    "vim"
+  imports = [
+    ../../home-modules/vim
     # X11 session
-    "i3"
-    "polybar"
+    ../../home-modules/i3
+    ../../home-modules/polybar
     # Wayland session
-    "sway"
-    "waybar"
+    ../../home-modules/sway
+    ../../home-modules/waybar
     # Shared
-    "alacritty"
-    "bash"
-    "rofi"
+    ../../home-modules/alacritty
+    ../../home-modules/bash
+    ../../home-modules/rofi
   ];
 
   # Home Manager needs a bit of information about you and the

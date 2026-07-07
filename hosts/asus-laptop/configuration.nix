@@ -45,7 +45,6 @@ in
     isNormalUser = true;
     description = "Le R";
     extraGroups = [ "docker" "networkmanager" "wheel" "video" "audio" ];
-    initialPassword = "password";
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -53,7 +52,6 @@ in
   environment.systemPackages = with pkgs; [
     man-pages
     man-pages-posix
-    vim
     google-chrome
     git
     autorandr
