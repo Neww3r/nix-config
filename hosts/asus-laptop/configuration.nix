@@ -49,7 +49,6 @@ in
   };
 
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.cudaSupport = true;
 
   environment.systemPackages = with pkgs; [
     man-pages
@@ -60,7 +59,6 @@ in
     autorandr
     alsa-utils
     openvpn
-    cudaPackages.cudatoolkit
     brightnessctl
     playerctl
     wireplumber
