@@ -88,6 +88,7 @@ in
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.cudaSupport = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -95,11 +96,12 @@ in
     pkgs.man-pages
     pkgs.man-pages-posix
     vim
-    firefox
+    google-chrome
     git
     autorandr
     alsa-utils
     openvpn
+    cudaPackages.cudatoolkit
   ];
 
   virtualisation.docker.enable = true;

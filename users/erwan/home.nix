@@ -32,6 +32,7 @@ in
     vlc
 
     # Tools
+    claude-code
     wget
     xsel
     tree
@@ -66,11 +67,5 @@ in
     meson
     ninja
 
-    # Rust Programming
-    rustc
-    cargo
-
-    # Java Programming
-    jdk
   ];
 }
