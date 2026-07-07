@@ -8,7 +8,10 @@ in
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../../sys-modules/desktop
+      # Both sessions coexist; comment one out to drop it entirely.
       ../../sys-modules/i3
+      ../../sys-modules/sway
     ];
 
   # Use the systemd-boot EFI boot loader.

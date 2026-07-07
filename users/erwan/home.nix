@@ -5,10 +5,15 @@ in
 {
   imports = importModules [
     "vim"
+    # X11 session
     "i3"
+    "polybar"
+    # Wayland session
+    "sway"
+    "waybar"
+    # Shared
     "alacritty"
     "bash"
-    "polybar"
     "rofi"
   ];
 

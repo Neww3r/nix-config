@@ -1,0 +1,63 @@
+/* Same palette as the polybar config. */
+@define-color background #282A2E;
+@define-color background-alt #373B41;
+@define-color foreground #C5C8C6;
+@define-color primary #77B5FE;
+@define-color alert #A54242;
+@define-color disabled #707880;
+
+* {
+  font-family: monospace, "Font Awesome 6 Free";
+  font-size: 13px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: @background;
+  color: @foreground;
+}
+
+#workspaces button {
+  padding: 0 8px;
+  color: @foreground;
+  border: none;
+  border-radius: 0;
+}
+
+#workspaces button.focused {
+  background: @background-alt;
+  border-bottom: 3px solid @primary;
+}
+
+#workspaces button.urgent {
+  background: @alert;
+}
+
+#window {
+  padding: 0 8px;
+}
+
+#network,
+#pulseaudio,
+#disk,
+#battery,
+#clock {
+  padding: 0 8px;
+}
+
+#network,
+#disk {
+  color: @primary;
+}
+
+#clock {
+  color: @primary;
+}
+
+#battery.warning {
+  color: #FFA500;
+}
+
+#battery.critical {
+  color: #FF0000;
+}

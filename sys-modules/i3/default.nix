@@ -2,17 +2,8 @@
 {
   environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /run/current-system/sw
 
-  services.displayManager.defaultSession = "none+i3";
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  services.libinput.enable = true;
-
   services.xserver = {
     enable = true;
-
-    displayManager = {
-      lightdm.enable = true;
-    };
 
     desktopManager = {
       xterm.enable = false;
