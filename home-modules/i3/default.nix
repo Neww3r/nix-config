@@ -48,6 +48,21 @@
       ''
         bindsym Mod4+l exec --no-startup-id ${pkgs.i3lock}/bin/i3lock -i ~/Pictures/wallpapers/lockscreen.png
         bindsym Mod4+p exec --no-startup-id ${pkgs.maim}/bin/maim -s | ${pkgs.xclip}/bin/xclip -selection clipboard -t image/png
+
+        # Audio (PipeWire via wireplumber)
+        bindsym XF86AudioRaiseVolume exec --no-startup-id ${pkgs.wireplumber}/bin/wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+
+        bindsym XF86AudioLowerVolume exec --no-startup-id ${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+        bindsym XF86AudioMute exec --no-startup-id ${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+        bindsym XF86AudioMicMute exec --no-startup-id ${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+
+        # Media playback
+        bindsym XF86AudioPlay exec --no-startup-id ${pkgs.playerctl}/bin/playerctl play-pause
+        bindsym XF86AudioNext exec --no-startup-id ${pkgs.playerctl}/bin/playerctl next
+        bindsym XF86AudioPrev exec --no-startup-id ${pkgs.playerctl}/bin/playerctl previous
+
+        # Backlight brightness
+        bindsym XF86MonBrightnessUp exec --no-startup-id ${pkgs.brightnessctl}/bin/brightnessctl set 5%+
+        bindsym XF86MonBrightnessDown exec --no-startup-id ${pkgs.brightnessctl}/bin/brightnessctl set 5%-
         client.focused            ${focused}
         client.focused_inactive   ${focused_inactive}
         client.unfocused          ${unfocused}

@@ -82,7 +82,7 @@ in
   users.users.${user} = {
     isNormalUser = true;
     description = "Le R";
-    extraGroups = [ "docker" "networkmanager" "wheel" ];
+    extraGroups = [ "docker" "networkmanager" "wheel" "video" "audio" ];
     initialPassword = "password";
   };
 
@@ -102,7 +102,13 @@ in
     alsa-utils
     openvpn
     cudaPackages.cudatoolkit
+    brightnessctl
+    playerctl
+    wireplumber
   ];
+
+  # Let users in the "video" group control screen backlight (media keys).
+  services.udev.packages = [ pkgs.brightnessctl ];
 
   virtualisation.docker.enable = true;
 
