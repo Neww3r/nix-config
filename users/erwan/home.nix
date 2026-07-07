@@ -14,6 +14,7 @@
     ../../home-modules/rofi
     ../../home-modules/gtk
     ../../home-modules/vscode
+    ../../home-modules/wallpapers
   ];
 
   home.username = "erwan";
