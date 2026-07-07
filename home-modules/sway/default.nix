@@ -17,6 +17,11 @@
       modifier = "Mod4";
       terminal = "alacritty";
       menu = "${pkgs.rofi}/bin/rofi -show";
+      output = {
+        "HDMI-A-1" = {
+          mode = "1920x1080@144Hz";
+        };
+      };
       input = {
         "type:keyboard" = {
           xkb_layout = "us";
