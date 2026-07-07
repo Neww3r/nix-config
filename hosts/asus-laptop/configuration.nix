@@ -142,7 +142,8 @@ in
 
     # Fine-grained power management. Turns off GPU when not in use.
     # Experimental and only works on modern Nvidia GPUs (Turing or newer).
-    powerManagement.finegrained = false;
+    # The GTX 1650 is Turing, and PRIME offload mode (required) is enabled.
+    powerManagement.finegrained = true;
 
     # Use the NVidia open source kernel module (not to be confused with the
     # independent third-party "nouveau" open source driver).
@@ -162,6 +163,13 @@ in
   };
 
   hardware.nvidia.prime = {
+    # Render on the AMD iGPU by default; apps opt into the dGPU with the
+    # PRIME offload env vars (or the `nvidia-offload <cmd>` wrapper below).
+    offload = {
+      enable = true;
+      enableOffloadCmd = true;
+    };
+
     # Make sure to use the correct Bus ID values for your system!
     # sudo lshw -c display
     nvidiaBusId = "PCI:1:0:0";
