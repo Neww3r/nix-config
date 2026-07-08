@@ -34,6 +34,7 @@
 
     # Tools
     claude-code
+    uv
     wget
     tree
     unzip

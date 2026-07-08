@@ -59,6 +59,10 @@ in
 
   virtualisation.docker.enable = true;
 
+  # Run prebuilt dynamically-linked binaries (uv-managed Pythons, manylinux
+  # wheels, downloaded tools) without patching them.
+  programs.nix-ld.enable = true;
+
   system.stateVersion = "24.11";
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }
