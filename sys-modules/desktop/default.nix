@@ -1,13 +1,12 @@
 { pkgs, ... }:
 {
-  # SDDM can launch both X11 and Wayland sessions (lightdm is X11-only).
-  # Every enabled session (sway, i3) shows up in the greeter's session
-  # picker, so switching between them never requires a rebuild.
+  # SDDM can launch both X11 and Wayland sessions; every enabled session
+  # shows up in the greeter's picker, so adding one never requires more
+  # than a rebuild.
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
 
-  # Session picked when none was chosen before. Set back to "none+i3" to make
-  # X11/i3 the default again.
+  # Session picked when none was chosen before.
   services.displayManager.defaultSession = "sway";
 
   # Enable touchpad support (enabled default in most desktopManager).

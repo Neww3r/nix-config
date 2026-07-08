@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
-  # Wayland bar, mirrors the polybar layout: workspaces + window title on the
-  # left; wifi, bluetooth, volume, disk, battery, clock on the right.
+  # Workspaces + window title on the left; wifi, bluetooth, volume, disk,
+  # battery, clock on the right.
   programs.waybar = {
     enable = true;
     settings = [

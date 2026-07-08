@@ -11,11 +11,8 @@ sys-modules/         System-level (NixOS) modules
   desktop/           SDDM, PipeWire, Bluetooth, fonts, media-key tools
   power/             TLP power management
   sway/              Sway system side: wlroots portal, swaylock PAM
-  i3/                X11 session (parked, see below)
 home-modules/        Home Manager modules, one directory per program
-  sway/ waybar/      Wayland session
-  i3/ polybar/       X11 session (parked)
-  alacritty/ bash/ rofi/ gtk/ vim/ vscode/ wallpapers/
+  sway/ waybar/ alacritty/ bash/ rofi/ gtk/ vim/ vscode/ wallpapers/
 overlays/            Packages tracked from nixpkgs-unstable
 users/<user>/        Home Manager entry point: module imports and user packages
 ```
@@ -43,10 +40,6 @@ the store is deduplicated with `auto-optimise-store`.
 
 ## Notes
 
-- **Wayland-only, i3 parked.** The X11 session (i3 + polybar) is kept but
-  commented out in the host configuration and in `home.nix`. Re-enable both
-  sides and it reappears in SDDM's session picker — SDDM is used precisely
-  because it can launch both X11 and Wayland sessions.
 - **Unstable overlay.** A few fast-moving packages come from
   `nixpkgs-unstable` via `overlays/`; everything else is pinned to the stable
   release.

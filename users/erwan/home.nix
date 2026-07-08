@@ -2,13 +2,8 @@
 {
   imports = [
     ../../home-modules/vim
-    # X11 session (disabled; re-enable together with sys-modules/i3)
-    # ../../home-modules/i3
-    # ../../home-modules/polybar
-    # Wayland session
     ../../home-modules/sway
     ../../home-modules/waybar
-    # Shared
     ../../home-modules/alacritty
     ../../home-modules/bash
     ../../home-modules/rofi

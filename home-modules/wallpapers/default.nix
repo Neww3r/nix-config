@@ -1,7 +1,6 @@
 { ... }:
 {
-  # Both sessions reference these paths: feh/i3lock (X11) and
-  # swaybg/swaylock (Wayland).
+  # Referenced by swaybg (wallpaper) and swaylock/swayidle (lockscreen).
   home.file = {
     "Pictures/wallpapers/wallpaper.png".source = ./wallpaper.png;
     "Pictures/wallpapers/lockscreen.png".source = ./lockscreen.png;
