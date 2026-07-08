@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   # Wayland bar, mirrors the polybar layout: workspaces + window title on the
-  # left; wifi, volume, disk, battery, clock on the right.
+  # left; wifi, bluetooth, volume, disk, battery, clock on the right.
   programs.waybar = {
     enable = true;
     settings = [
@@ -11,7 +11,7 @@
         height = 32;
 
         modules-left = [ "sway/workspaces" "sway/window" ];
-        modules-right = [ "network" "pulseaudio" "disk" "battery" "clock" ];
+        modules-right = [ "network" "bluetooth" "pulseaudio" "disk" "battery" "clock" ];
 
         "sway/window" = {
           max-length = 60;
@@ -26,6 +26,18 @@
           format-icons = [ "󰤯" "󰤟" "󰤢" "󰤥" "󰤨" ];
           tooltip-format-wifi = "{essid} ({signalStrength}%) {ipaddr}";
           on-click = "${pkgs.networkmanagerapplet}/bin/nm-connection-editor";
+        };
+
+        bluetooth = {
+          format = "󰂯";
+          format-off = "󰂲";
+          format-disabled = "󰂲";
+          format-connected = "󰂱 {device_alias}";
+          tooltip-format = "{controller_alias} {status}";
+          tooltip-format-connected = "{device_alias} {device_address}";
+          on-click = "${pkgs.blueman}/bin/blueman-manager";
+          # Radio starts powered off (powerOnBoot = false); right-click toggles it.
+          on-click-right = "${pkgs.bluez}/bin/bluetoothctl show | grep -q 'Powered: yes' && ${pkgs.bluez}/bin/bluetoothctl power off || ${pkgs.bluez}/bin/bluetoothctl power on";
         };
 
         pulseaudio = {

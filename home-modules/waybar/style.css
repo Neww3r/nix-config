@@ -38,11 +38,17 @@ window#waybar {
 }
 
 #network,
+#bluetooth,
 #pulseaudio,
 #disk,
 #battery,
 #clock {
   padding: 0 8px;
+}
+
+#bluetooth.off,
+#bluetooth.disabled {
+  color: @disabled;
 }
 
 #network,
