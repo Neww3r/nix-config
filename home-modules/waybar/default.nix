@@ -6,8 +6,8 @@
   services.network-manager-applet.enable = true;
   services.blueman-applet.enable = true;
 
-  # Workspaces + window title on the left; volume, disk, battery, tray
-  # (wifi/bluetooth applets), clock on the right.
+  # Workspaces + window title on the left; network name, volume, disk,
+  # battery, tray (wifi/bluetooth applets), clock on the right.
   programs.waybar = {
     enable = true;
     settings = [
@@ -17,13 +17,23 @@
         height = 32;
 
         modules-left = [ "sway/workspaces" "sway/window" ];
-        modules-right = [ "pulseaudio" "disk" "battery" "tray" "clock" ];
+        modules-right = [ "network" "pulseaudio" "disk" "battery" "tray" "clock" ];
 
         "sway/window" = {
           max-length = 60;
         };
 
         # Icons are Nerd Font glyphs (nerd-fonts.jetbrains-mono).
+        # Read-only indicator; the menu lives in the nm-applet tray icon.
+        network = {
+          interval = 5;
+          format-wifi = "{icon} {essid}";
+          format-ethernet = "󰈀 {ifname} {ipaddr}";
+          format-disconnected = "󰤮 disconnected";
+          format-icons = [ "󰤯" "󰤟" "󰤢" "󰤥" "󰤨" ];
+          tooltip-format-wifi = "{essid} ({signalStrength}%) {ipaddr}";
+        };
+
         pulseaudio = {
           format = "{icon} {volume}%";
           format-muted = "󰝟 muted";

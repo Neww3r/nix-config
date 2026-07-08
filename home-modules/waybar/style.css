@@ -36,6 +36,7 @@ window#waybar {
   padding: 0 8px;
 }
 
+#network,
 #pulseaudio,
 #disk,
 #battery,
@@ -44,6 +45,7 @@ window#waybar {
   padding: 0 8px;
 }
 
+#network,
 #disk {
   color: @primary;
 }
