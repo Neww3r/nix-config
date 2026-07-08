@@ -1,5 +1,11 @@
 { pkgs, ... }:
 {
+  # Tray applets: clicking their icons drops a menu down from the bar
+  # (wifi picker, bluetooth devices) instead of opening a full window.
+  # Both are systemd user services tied to the graphical session.
+  services.network-manager-applet.enable = true;
+  services.blueman-applet.enable = true;
+
   # Workspaces + window title on the left; wifi, bluetooth, volume, disk,
   # battery, clock on the right.
   programs.waybar = {
@@ -11,7 +17,7 @@
         height = 32;
 
         modules-left = [ "sway/workspaces" "sway/window" ];
-        modules-right = [ "network" "bluetooth" "pulseaudio" "disk" "battery" "clock" ];
+        modules-right = [ "network" "bluetooth" "pulseaudio" "disk" "battery" "tray" "clock" ];
 
         "sway/window" = {
           max-length = 60;
@@ -25,7 +31,6 @@
           format-disconnected = "󰤮 disconnected";
           format-icons = [ "󰤯" "󰤟" "󰤢" "󰤥" "󰤨" ];
           tooltip-format-wifi = "{essid} ({signalStrength}%) {ipaddr}";
-          on-click = "${pkgs.networkmanagerapplet}/bin/nm-connection-editor";
         };
 
         bluetooth = {
@@ -35,7 +40,6 @@
           format-connected = "󰂱 {device_alias}";
           tooltip-format = "{controller_alias} {status}";
           tooltip-format-connected = "{device_alias} {device_address}";
-          on-click = "${pkgs.blueman}/bin/blueman-manager";
           # Radio starts powered off (powerOnBoot = false); right-click toggles it.
           on-click-right = "${pkgs.bluez}/bin/bluetoothctl show | grep -q 'Powered: yes' && ${pkgs.bluez}/bin/bluetoothctl power off || ${pkgs.bluez}/bin/bluetoothctl power on";
         };
@@ -64,6 +68,10 @@
           format = "{icon} {capacity}%";
           format-charging = "󰂄 {capacity}%";
           format-icons = [ "󰁺" "󰁻" "󰁽" "󰁿" "󰂁" "󰁹" ];
+        };
+
+        tray = {
+          spacing = 8;
         };
 
         clock = {
