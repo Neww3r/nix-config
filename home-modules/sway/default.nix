@@ -1,4 +1,7 @@
 { lib, pkgs, ... }:
+let
+  lock = "${pkgs.swaylock}/bin/swaylock -i ~/Pictures/wallpapers/lockscreen.png";
+in
 {
   home.packages = with pkgs; [
     swaylock
@@ -19,7 +22,7 @@
       }
     ];
     events = {
-      before-sleep = "${pkgs.swaylock}/bin/swaylock -i ~/Pictures/wallpapers/lockscreen.png";
+      before-sleep = lock;
     };
   };
 
@@ -62,7 +65,7 @@
       };
       defaultWorkspace = "workspace number 1";
       keybindings = lib.mkOptionDefault {
-        "Mod4+l" = "exec ${pkgs.swaylock}/bin/swaylock -i ~/Pictures/wallpapers/lockscreen.png";
+        "Mod4+l" = "exec ${lock}";
         "Mod4+p" = "exec ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp)\" - | ${pkgs.wl-clipboard}/bin/wl-copy";
 
         # Audio (PipeWire via wireplumber)

@@ -4,7 +4,6 @@
     enable = true;
     plugins = with pkgs.vimPlugins; [
       coc-nvim
-      # coc-rust-analyzer
       coc-snippets
       gruvbox
       vim-airline
