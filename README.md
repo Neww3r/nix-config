@@ -12,7 +12,7 @@ sys-modules/         System-level (NixOS) modules
   power/             TLP power management
   sway/              Sway system side: wlroots portal, swaylock PAM
 home-modules/        Home Manager modules, one directory per program
-  sway/ waybar/ alacritty/ bash/ rofi/ gtk/ vim/ vscode/ wallpapers/
+  sway/ waybar/ alacritty/ zsh/ bash/ rofi/ gtk/ vim/ vscode/ wallpapers/
 overlays/            Packages tracked from nixpkgs-unstable
 users/<user>/        Home Manager entry point: module imports and user packages
 ```

@@ -6,6 +6,7 @@
     ../../home-modules/waybar
     ../../home-modules/alacritty
     ../../home-modules/bash
+    ../../home-modules/zsh
     ../../home-modules/rofi
     ../../home-modules/gtk
     ../../home-modules/vscode

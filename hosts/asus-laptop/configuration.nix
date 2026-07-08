@@ -41,7 +41,11 @@
     isNormalUser = true;
     description = "Le R";
     extraGroups = [ "docker" "networkmanager" "wheel" "video" "audio" ];
+    shell = pkgs.zsh;
   };
+  # Login shell; needed system-side so zsh lands in /etc/shells and gets the
+  # Nix environment. Per-user config lives in home-modules/zsh.
+  programs.zsh.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 
