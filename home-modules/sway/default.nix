@@ -82,11 +82,12 @@ in
     };
     extraConfig =
       let
+        # Gruvbox, matching rofi/gruvbox.rasi and waybar/style.css.
         # border | background | text | indicator | child_border
-        focused = "#282828d9 #282828d9 #FFFFFF #282828d9 #282828d9";
-        unfocused = "#282828d9 #282828d9 #AAAAAA #282828d9 #282828d9";
-        focused_inactive = "#282828d9 #282828d9 #AAAAAA #282828d9 #282828d9";
-        urgent = "#FF0000   #FF0000   #FF0000 #FF0000   #FF0000";
+        focused = "#282828d9 #282828d9 #EBDBB2 #282828d9 #282828d9";
+        unfocused = "#282828d9 #282828d9 #928374 #282828d9 #282828d9";
+        focused_inactive = "#282828d9 #282828d9 #928374 #282828d9 #282828d9";
+        urgent = "#FB4934   #FB4934   #282828 #FB4934   #FB4934";
       in
       ''
         client.focused            ${focused}

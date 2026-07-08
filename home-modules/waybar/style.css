@@ -1,10 +1,10 @@
-/* Same palette as the polybar config. */
-@define-color background #282A2E;
-@define-color background-alt #373B41;
-@define-color foreground #C5C8C6;
-@define-color primary #77B5FE;
-@define-color alert #A54242;
-@define-color disabled #707880;
+/* Gruvbox palette, matching rofi/gruvbox.rasi. */
+@define-color background #282828;
+@define-color background-alt #353535;
+@define-color foreground #EBDBB2;
+@define-color primary #83A598;
+@define-color alert #FB4934;
+@define-color disabled #928374;
 
 * {
   font-family: "JetBrainsMono Nerd Font", monospace, "Font Awesome 6 Free";
@@ -61,9 +61,9 @@ window#waybar {
 }
 
 #battery.warning {
-  color: #FFA500;
+  color: #FE8019;
 }
 
 #battery.critical {
-  color: #FF0000;
+  color: @alert;
 }
