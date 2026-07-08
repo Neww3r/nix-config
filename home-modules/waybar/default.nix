@@ -1,21 +1,13 @@
-{ pkgs, ... }:
+{ ... }:
 {
-  # Bluetooth tray applet: its icon shows the status and clicking it drops
-  # a menu down from the bar (devices, pairing, power). Runs as a systemd
-  # user service tied to the graphical session. Network gets no applet —
-  # the network module below opens a rofi menu instead, so the bar keeps a
-  # single wifi icon.
+  # Tray applets: their icons show wifi/bluetooth status and clicking them
+  # drops a menu down from the bar (wifi picker, bluetooth devices).
+  # Both are systemd user services tied to the graphical session.
+  services.network-manager-applet.enable = true;
   services.blueman-applet.enable = true;
 
-  # Wifi picker for the network module's on-click, rendered by rofi in
-  # dmenu mode (inherits the gruvbox launcher theme).
-  xdg.configFile."networkmanager-dmenu/config.ini".text = ''
-    [dmenu]
-    dmenu_command = ${pkgs.rofi}/bin/rofi -dmenu -i
-  '';
-
   # Workspaces + window title on the left; network name, volume, disk,
-  # battery, tray (bluetooth applet), clock on the right.
+  # battery, tray (wifi/bluetooth applets), clock on the right.
   programs.waybar = {
     enable = true;
     settings = [
@@ -32,6 +24,7 @@
         };
 
         # Icons are Nerd Font glyphs (nerd-fonts.jetbrains-mono).
+        # Read-only indicator; the menu lives in the nm-applet tray icon.
         network = {
           interval = 5;
           format-wifi = "{icon} {essid}";
@@ -39,7 +32,6 @@
           format-disconnected = "󰤮 disconnected";
           format-icons = [ "󰤯" "󰤟" "󰤢" "󰤥" "󰤨" ];
           tooltip-format-wifi = "{essid} ({signalStrength}%) {ipaddr}";
-          on-click = "${pkgs.networkmanager_dmenu}/bin/networkmanager_dmenu";
         };
 
         pulseaudio = {
