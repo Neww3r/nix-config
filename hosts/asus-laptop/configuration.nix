@@ -1,8 +1,5 @@
-{ pkgs, ... }:
+{ pkgs, user, ... }:
 
-let
-  user = "erwan";
-in
 {
   imports =
     [
@@ -65,4 +62,13 @@ in
 
   system.stateVersion = "24.11";
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  # Keep the store from slowly filling the disk: weekly GC of generations
+  # older than a month, and hard-link identical store files.
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
+  nix.settings.auto-optimise-store = true;
 }

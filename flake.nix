@@ -9,23 +9,30 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }: {
-    nixosConfigurations = {
-      asus-laptop = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./overlays
-          ./hosts/asus-laptop/configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.backupFileExtension = "backup";
-            home-manager.users.erwan = import ./users/erwan/home.nix;
-          }
-        ];
+  outputs = inputs@{ nixpkgs, home-manager, ... }:
+    let
+      # Single source of truth for the username; passed to both the NixOS
+      # modules (specialArgs) and the home-manager modules (extraSpecialArgs).
+      user = "erwan";
+    in
+    {
+      nixosConfigurations = {
+        asus-laptop = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs user; };
+          modules = [
+            ./overlays
+            ./hosts/asus-laptop/configuration.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "backup";
+              home-manager.extraSpecialArgs = { inherit user; };
+              home-manager.users.${user} = import ./users/erwan/home.nix;
+            }
+          ];
+        };
       };
     };
-  };
 }

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, user, ... }:
 {
   imports = [
     ../../home-modules/vim
@@ -17,8 +17,8 @@
     ../../home-modules/wallpapers
   ];
 
-  home.username = "erwan";
-  home.homeDirectory = "/home/erwan";
+  home.username = user;
+  home.homeDirectory = "/home/${user}";
   home.stateVersion = "23.11";
 
   # Let Home Manager install and manage itself.
