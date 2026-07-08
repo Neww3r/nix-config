@@ -7,7 +7,6 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-26.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    alacritty-theme.url = "github:alexghr/alacritty-theme.nix";
   };
 
   outputs = inputs@{ nixpkgs, home-manager, ... }: {

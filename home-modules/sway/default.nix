@@ -18,12 +18,9 @@
         resumeCommand = "${pkgs.sway}/bin/swaymsg 'output * power on'";
       }
     ];
-    events = [
-      {
-        event = "before-sleep";
-        command = "${pkgs.swaylock}/bin/swaylock -i ~/Pictures/wallpapers/lockscreen.png";
-      }
-    ];
+    events = {
+      before-sleep = "${pkgs.swaylock}/bin/swaylock -i ~/Pictures/wallpapers/lockscreen.png";
+    };
   };
 
   wayland.windowManager.sway = {
@@ -69,7 +66,7 @@
         "Mod4+p" = "exec ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp)\" - | ${pkgs.wl-clipboard}/bin/wl-copy";
 
         # Audio (PipeWire via wireplumber)
-        "XF86AudioRaiseVolume" = "exec ${pkgs.wireplumber}/bin/wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+";
+        "XF86AudioRaiseVolume" = "exec ${pkgs.wireplumber}/bin/wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+";
         "XF86AudioLowerVolume" = "exec ${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
         "XF86AudioMute" = "exec ${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
         "XF86AudioMicMute" = "exec ${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";

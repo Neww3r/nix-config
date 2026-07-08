@@ -1,7 +1,6 @@
 { inputs, ... }:
 {
   nixpkgs.overlays = [
-    inputs.alacritty-theme.overlays.default
     # Track these fast-moving packages from nixpkgs-unstable instead of the
     # pinned stable branch. `nix flake update` pulls newest.
     (final: prev:
