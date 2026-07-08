@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   # Wayland bar, mirrors the polybar layout: workspaces + window title on the
   # left; wifi, volume, disk, battery, clock on the right.
@@ -25,6 +25,7 @@
           format-disconnected = "󰤮 disconnected";
           format-icons = [ "󰤯" "󰤟" "󰤢" "󰤥" "󰤨" ];
           tooltip-format-wifi = "{essid} ({signalStrength}%) {ipaddr}";
+          on-click = "${pkgs.networkmanagerapplet}/bin/nm-connection-editor";
         };
 
         pulseaudio = {
