@@ -7,6 +7,25 @@
     wl-clipboard # xclip equivalent (wl-copy / wl-paste)
   ];
 
+  # Power off the outputs after 10 minutes idle (a display left on is a
+  # constant multi-watt draw), and lock before the system suspends.
+  services.swayidle = {
+    enable = true;
+    timeouts = [
+      {
+        timeout = 600;
+        command = "${pkgs.sway}/bin/swaymsg 'output * power off'";
+        resumeCommand = "${pkgs.sway}/bin/swaymsg 'output * power on'";
+      }
+    ];
+    events = [
+      {
+        event = "before-sleep";
+        command = "${pkgs.swaylock}/bin/swaylock -i ~/Pictures/wallpapers/lockscreen.png";
+      }
+    ];
+  };
+
   wayland.windowManager.sway = {
     enable = true;
     # Use the system-level sway from programs.sway, which carries the

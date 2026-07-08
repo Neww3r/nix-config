@@ -9,6 +9,7 @@ in
       ./hardware-configuration.nix
       ./nvidia.nix
       ../../sys-modules/desktop
+      ../../sys-modules/power
       # Wayland-only setup; uncomment i3 to bring the X11 session back.
       # ../../sys-modules/i3
       ../../sys-modules/sway
