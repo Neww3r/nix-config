@@ -14,7 +14,10 @@
       vim-surround
       vim-snippets
     ];
-    extraConfig = builtins.readFile ./vimrc;
+    extraConfig = ''
+      " coc.nvim runs its extension host on node, which isn't in PATH
+      let g:coc_node_path = '${pkgs.nodejs}/bin/node'
+    '' + builtins.readFile ./vimrc;
   };
 
   home.packages = with pkgs; [
