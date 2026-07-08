@@ -55,9 +55,8 @@
           format = "󰋊 {percentage_used}%";
         };
 
+        # Battery and adapter are auto-detected; no need to name BAT0/AC0.
         battery = {
-          bat = "BAT0";
-          adapter = "AC0";
           states = {
             warning = 30;
             critical = 5;

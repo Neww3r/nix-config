@@ -29,7 +29,11 @@
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "backup";
               home-manager.extraSpecialArgs = { inherit user; };
-              home-manager.users.${user} = import ./users/erwan/home.nix;
+              home-manager.users.${user}.imports = [
+                ./users/erwan/home.nix
+                # Host-specific home settings (monitor modes, ...).
+                ./hosts/asus-laptop/home.nix
+              ];
             }
           ];
         };
