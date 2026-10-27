@@ -10,6 +10,10 @@
   # battery, tray (wifi/bluetooth applets), clock on the right.
   programs.waybar = {
     enable = true;
+    # Run as a user service tied to the graphical session rather than a sway
+    # `exec`: systemd restarts it if it crashes at login (e.g. the pulseaudio
+    # module aborting when pipewire-pulse isn't up yet).
+    systemd.enable = true;
     settings = [
       {
         layer = "top";

@@ -50,9 +50,6 @@ in
         {
           command = "${pkgs.swaybg}/bin/swaybg -m fill -i ~/Pictures/wallpapers/wallpaper.png";
         }
-        {
-          command = "${pkgs.waybar}/bin/waybar";
-        }
       ];
       bars = [ ];
       window = {
