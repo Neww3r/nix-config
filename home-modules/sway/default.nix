@@ -1,12 +1,24 @@
 { lib, pkgs, ... }:
 let
   lock = "${pkgs.swaylock}/bin/swaylock -i ~/Pictures/wallpapers/lockscreen.png";
+  # Toggle a screen recording: select a region and start, press again to stop
+  # (SIGINT lets wf-recorder finalize the file).
+  record = pkgs.writeShellScript "record-toggle" ''
+    if ${pkgs.procps}/bin/pgrep -x wf-recorder >/dev/null; then
+      ${pkgs.procps}/bin/pkill -INT -x wf-recorder
+    else
+      mkdir -p ~/Videos
+      exec ${pkgs.wf-recorder}/bin/wf-recorder -g "$(${pkgs.slurp}/bin/slurp)" \
+        -f ~/Videos/recording-$(date +%F-%H%M%S).mp4
+    fi
+  '';
 in
 {
   home.packages = with pkgs; [
     swaylock
     grim # screenshot grabber
     slurp # region selector for grim
+    wf-recorder # screen recorder
     wl-clipboard # xclip equivalent (wl-copy / wl-paste)
   ];
 
@@ -60,6 +72,7 @@ in
       keybindings = lib.mkOptionDefault {
         "Mod4+l" = "exec ${lock}";
         "Mod4+p" = "exec ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp)\" - | ${pkgs.wl-clipboard}/bin/wl-copy";
+        "Mod4+Shift+p" = "exec ${record}";
 
         # Audio (PipeWire via wireplumber)
         "XF86AudioRaiseVolume" = "exec ${pkgs.wireplumber}/bin/wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+";
